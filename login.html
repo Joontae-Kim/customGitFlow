@@ -10,11 +10,21 @@
     <button type="button" id="signin-Btn">Sign In</button>
   </body>
   <script type="text/javascript">
+    const sampleId = 'abd'
+    const samplePw = '123'
     const loginBtn = document.querySelector('#signin-Btn')
     loginBtn.addEventListener('click', () => {
       let id = document.querySelector('#userId').value
       let pw = document.querySelector('#userPw').value
-      alert(`id = ${id} pw = ${pw}`)
+      if (sampleId !== id && samplePw !== pw) {
+        alert(`${id}, ${pw} is no user!`)
+      } else if (sampleId !== id && samplePw === pw) {
+        alert(`id = ${id} is wrong`)
+      } else if (sampleId === id && samplePw !== pw) {
+        alert(`pw = ${pw} is wrong`)
+      } else {
+        alert(true)
+      }
     })
   </script>
 </html>
